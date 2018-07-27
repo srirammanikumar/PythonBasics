@@ -4,7 +4,7 @@ students = []
 def get_students_titlecase():
     students_titlecase = []
     for student in students:
-        students_titlecase.append(student.title)
+        students_titlecase.append(student["name"].title())
     return students_titlecase
 
 
@@ -13,23 +13,39 @@ def print_students_titlecase():
     print(students_titlecase)
 
 
-def add_student(name,student_id = 123):
-    student = {"name":name,"student_id":student_id}
-    students.append(name)
+def add_student(name, student_id=123):
+    student = {"name": name, "student_id": student_id}
+    students.append(student)
 
-students_list = get_students_titlecase()
 
-add_student("Ram")
+def save_file(student):
+    try:
+        f = open("students.txt", "a")
+        f.write(student + "\n")
+        f.close()
+    except Exception:
+        print("cannot save")
 
-""" var args demo """
-def var_args(name, *args):
-    print(name)
-    print(args)
 
-def var_args_with_keys(name, **kwargs):
-    print(name)
-    print(kwargs["desc"],kwargs["params"])
+def read_file():
+    try:
+        f = open("students.txt", "r")
+        for student in f.readlines():
+            add_student(student)
+        f.close()
+    except Exception:
+        print("could not read")
 
-var_args("ram","aaaa","var args","one more")
 
-var_args_with_keys("ram", desc="aaaa", params="var args",extra = "one more")
+read_file();
+print_students_titlecase()
+
+while (1):
+    prompt = input("Do you want to add student?(Y/N)")
+    if (prompt == "Y"):
+        student_name = input("Enter name for student :")
+        student_id = input("Enter ID :")
+        add_student(student_name, student_id)
+        save_file(student_name)
+    else:
+        break
