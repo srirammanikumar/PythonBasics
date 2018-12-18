@@ -40,7 +40,7 @@ def read_file():
 read_file();
 print_students_titlecase()
 
-while (1):
+while 1:
     prompt = input("Do you want to add student?(Y/N)")
     if (prompt == "Y"):
         student_name = input("Enter name for student :")
