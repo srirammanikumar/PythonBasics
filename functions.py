@@ -42,7 +42,7 @@ print_students_titlecase()
 
 while 1:
     prompt = input("Do you want to add student?(Y/N)")
-    if (prompt == "Y"):
+    if prompt == "Y":
         student_name = input("Enter name for student :")
         student_id = input("Enter ID :")
         add_student(student_name, student_id)
