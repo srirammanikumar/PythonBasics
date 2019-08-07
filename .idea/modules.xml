@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/PythonBasics.iml" filepath="$PROJECT_DIR$/.idea/PythonBasics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../UdacityQuiz/.idea/UdacityQuiz.iml" filepath="$PROJECT_DIR$/../UdacityQuiz/.idea/UdacityQuiz.iml" />
     </modules>
   </component>
 </project>
